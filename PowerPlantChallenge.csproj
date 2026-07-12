@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <!-- PowerPlantChallenge.Tests is nested under this project's own folder for a
+       cleaner solution layout, but its files must not be picked up by this
+       project's default globs (it's a separate .csproj with its own build). -->
+  <ItemGroup>
+    <Compile Remove="PowerPlantChallenge.Tests\**" />
+    <Content Remove="PowerPlantChallenge.Tests\**" />
+    <EmbeddedResource Remove="PowerPlantChallenge.Tests\**" />
+    <None Remove="PowerPlantChallenge.Tests\**" />
+  </ItemGroup>
+
+</Project>
